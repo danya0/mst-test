@@ -1,7 +1,15 @@
 // General components
 @import "general/mixins";
 @import "general/reset";
-@import "general/fonts";
+// @import "general/fonts";
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
 // Other components
-
