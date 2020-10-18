@@ -1,0 +1,28 @@
+mixin main()
+    - 
+        var content = [
+            {title: "Архитектура", subtitle: "Оригинальная архитектура жилого комплекса бизнес-класса «Первомайская» формирует современный стиль жизни"},
+            {title: "Благоустройство", subtitle: "Запроектированные большие окна, которые пропускают много солнечного света, наполнят Ваши квартиры теплотой и уютом"},
+            {title: "Безопастность", subtitle: "Современный двор европейского уровня — территория для детей, игр на свежем воздухе и вечерних"},
+            {title: "Инженерия", subtitle: "Оригинальная архитектура жилого комплекса бизнес-класса «Первомайская» формирует современный стиль жизни"},
+            {title: "Инфраструктура", subtitle: "Прекрасный вариант для тех, кто предпочитает жить в спокойном районе среди интеллигенции, но при этом чувствовать ритм мегаполиса"},
+            {title: "Транспортная доступность", subtitle: "Жилой комплекс «Первомайска» расположен в престижном Академическом районе"}
+        ]
+    
+    main.main
+        .container
+            .main-wrap
+                .tabs
+                    each val, index in content
+                        .tabs__item= content[index].title
+                .content
+                    .content-left
+                        .content-wrap
+                            each val, index in content
+                                .content-block
+                                    .content__title= content[index].title
+                                    .content__subtitle= content[index].subtitle
+                        .content__counter <span>1</span>/6
+                    .content-right
+                        - for(let i = 0; i<6; i++)
+                            .content__img
