@@ -1,24 +1,39 @@
 .header {
     &-wrap {
         position: relative;
-        background: lightcoral;
         padding: 22px 117px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-family: 'Gilroy', sans-serif;
         font-weight: bold;
+        @include ad700 {
+            height: 160px;
+            flex-direction: column;
+            padding: 22px 50px;
+        }
     }
     & .nav {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
+        @include ad1100 {
+            flex-direction: column;
+        }
+        @include ad700 {
+            order: 1;
+        }
         &__item {
             font-size: 12px;
             cursor: pointer;
             padding: 0px 28px;
             text-transform: uppercase;
+            @include ad1100 {
+                padding: 0;
+                margin: 4px 0;
+            }
         }   
     }
     &-box {
@@ -26,6 +41,11 @@
         height: 70px;
         width: 70px;
         background: $activeColor;
+
+        @include ad700 {
+            height: 50px;
+            width: 50px;
+        }
     }
     & .logo, .number {
         text-transform: uppercase;
