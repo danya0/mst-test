@@ -13,8 +13,11 @@ mixin main()
         .container
             .main-wrap
                 .tabs
-                    each val, index in content
-                        .tabs__item= content[index].title
+                    .tabs-wrap
+                        each val, index in content
+                            input(type="radio", name="tabs", id="tab"+(index+1) checked=index == 0 ? true : false).tabs__input
+                            label(for="tab"+(index+1)).tabs__item= content[index].title
+
                 .content
                     .content-left
                         .content-wrap

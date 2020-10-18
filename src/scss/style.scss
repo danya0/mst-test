@@ -15,7 +15,6 @@ html, body {
 }
 
 body {
-    background: lightblue;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -31,4 +30,5 @@ body {
 }
 
 // Other components
-@import "components/header.scss"
+@import "components/header.scss";
+@import "components/main.scss";
