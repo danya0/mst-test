@@ -1,5 +1,6 @@
 include ../components/header.pug
 include ../components/main.pug
+include ../components/footer.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -12,6 +13,8 @@ html(lang="ru")
         link(rel="stylesheet", href="css/style.min.css")
         title MST-TEST
     body
-        +header
-        +main
+        .wrapper
+            +header
+            +main
+            +footer
         script(src="js/script.js")

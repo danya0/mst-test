@@ -19,5 +19,16 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .main {
+        flex: 1 1;
+    }
+}
+
 // Other components
 @import "components/header.scss"
