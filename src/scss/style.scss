@@ -2,6 +2,10 @@
 @import "general/mixins";
 @import "general/reset";
 @import "general/fonts";
+@import "general/grid";
+@import "general/media";
+
+$activeColor: #262525;
 
 html, body {
     height: 100%;
@@ -9,7 +13,9 @@ html, body {
 }
 
 body {
+    background: lightblue;
     font-family: 'Roboto', sans-serif;
 }
 
 // Other components
+@import "components/header.scss"

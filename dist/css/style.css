@@ -20,6 +20,11 @@ body {
           box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
@@ -36,6 +41,12 @@ body {
   font-style: normal;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1810px;
+  padding: 0px 5px;
+}
+
 html,
 body {
   height: 100%;
@@ -43,7 +54,78 @@ body {
 }
 
 body {
+  background: lightblue;
   font-family: 'Roboto', sans-serif;
+}
+
+.header-wrap {
+  position: relative;
+  background: lightcoral;
+  padding: 22px 117px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: bold;
+}
+
+.header .nav {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .nav__item {
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0px 28px;
+  text-transform: uppercase;
+}
+
+.header-box {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background: #262525;
+}
+
+.header .logo,
+.header .number {
+  text-transform: uppercase;
+  font-size: 17px;
+}
+
+.header .logo-box {
+  left: 24px;
+  top: 25px;
+}
+
+.header .hamburger {
+  right: 24px;
+  top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
 }
 @supports (-webkit-appearance:none){
 

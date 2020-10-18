@@ -1,3 +1,13 @@
 mixin header()
     header.header
-        h1  я header
+        .header-wrap
+            .header-box.logo-box
+            a(href="#").logo Первомайская
+            nav.nav
+                .nav__item О комплексе
+                .nav__item Особенности
+                .nav__item Пентхаусы
+                .nav__item Выбрать квартиру
+            a(href="tel:+78888888888").number 8 888 888 88 88
+            .header-box.hamburger
+                include ../../img/header/IconBurger.svg
