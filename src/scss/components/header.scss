@@ -40,7 +40,7 @@
         position: absolute;
         height: 70px;
         width: 70px;
-        background: $activeColor;
+        background: $base;
 
         @include ad700 {
             height: 50px;

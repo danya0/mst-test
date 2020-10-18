@@ -5,7 +5,9 @@
 @import "general/grid";
 @import "general/media";
 
-$activeColor: #262525;
+$base: #262525;
+$tabActive: #262525;
+$tabDisabe: #505050;
 
 html, body {
     height: 100%;
