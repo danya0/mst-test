@@ -63,4 +63,17 @@
         justify-content: center;
         cursor: pointer;
     }
+    .underline {
+        transition-property: left, right;
+        transition: .3s ease;
+        position: absolute;
+        left: 20px;
+        right: 464px;
+        bottom: -10px;
+        height: 4px;
+        background: #D88F5E;
+        @include ad1100 {
+            display: none;
+        }
+    }
 }
