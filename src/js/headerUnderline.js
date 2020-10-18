@@ -1,4 +1,4 @@
-function underline({wrapSelector, itemsBetween, reduceUnderline}) {
+export default function underline({wrapSelector, itemsBetween, reduceUnderline}) {
     const wrap = document.querySelector(wrapSelector),
     items = wrap.querySelectorAll('*');
 
@@ -89,12 +89,3 @@ function underline({wrapSelector, itemsBetween, reduceUnderline}) {
 
     drawUnderline(activeItem);
 }
-
-document.addEventListener('DOMContentLoaded', ()=> {
-    setTimeout(()=> {
-        underline({
-            wrapSelector: '.nav',
-            reduceUnderline: 20,
-        });
-    }, 100)
-})
