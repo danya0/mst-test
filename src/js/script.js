@@ -1,6 +1,6 @@
 // * headerUnderline
 import headerUnderline from "./headerUnderline";
-import tabs from "./tabs"
+import headerTabs from "./headerTabs"
 
 document.addEventListener('DOMContentLoaded', ()=> {
     // header underline function
@@ -11,5 +11,5 @@ document.addEventListener('DOMContentLoaded', ()=> {
         });
     }, 100);
     // header tabs function
-    tabs('.nav', '.nav__item', '.main-item', 'active')
+    headerTabs('.nav', '.nav__item', '.main-item', 'active')
 })

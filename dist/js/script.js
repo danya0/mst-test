@@ -489,6 +489,18 @@ eval("\n\nvar anObject = __webpack_require__(/*! ./_an-object */ \"./node_module
 
 /***/ }),
 
+/***/ "./src/js/headerTabs.js":
+/*!******************************!*\
+  !*** ./src/js/headerTabs.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es6.regexp.replace */ \"./node_modules/core-js/modules/es6.regexp.replace.js\");\n/* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar tabs = function tabs(headerSelector, tabSelector, contentSelector, activeClass) {\n  var header = document.querySelector(headerSelector),\n      tabs = document.querySelectorAll(tabSelector),\n      content = document.querySelectorAll(contentSelector);\n  var indexActiveTab = 0;\n  var aviableNow = true; // * Функиця которая скрывает таб\n\n  function hideTabContent(prevIndex, nextIndex) {\n    if (prevIndex === nextIndex) {\n      return;\n    }\n\n    setTimeout(function () {\n      if (indexActiveTab !== prevIndex) {\n        content[prevIndex].style.display = 'none';\n      }\n    }, 300);\n    content.forEach(function (item) {\n      item.style.zIndex = -1;\n      item.style.position = 'absolute';\n      item.classList.remove(activeClass);\n    });\n  } // * Функиця которая показывает конкретный таб\n\n\n  function showTabContent(i) {\n    content[i].style.display = 'block';\n    content[i].style.position = 'static';\n    content[i].style.zIndex = 3;\n    setTimeout(function () {\n      content[i].classList.add(activeClass);\n    }, 10);\n  } // * Вызов функции\n\n\n  hideTabContent();\n  showTabContent(indexActiveTab); // * Прослушка и делегирование событий\n\n  header.addEventListener('click', function (e) {\n    var target = e.target;\n\n    if (target.classList.contains(tabSelector.replace(/\\./, '')) || target.parentNode.classList.contains(tabSelector.replace(/\\./, ''))) {\n      if (aviableNow) {\n        tabs.forEach(function (item, i) {\n          if (target == item || target.parentNode == item) {\n            hideTabContent(indexActiveTab, i);\n            showTabContent(i);\n            indexActiveTab = i;\n          }\n        });\n      }\n    }\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (tabs);\n\n//# sourceURL=webpack:///./src/js/headerTabs.js?");
+
+/***/ }),
+
 /***/ "./src/js/headerUnderline.js":
 /*!***********************************!*\
   !*** ./src/js/headerUnderline.js ***!
@@ -509,19 +521,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nvar underline = function unde
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _headerUnderline__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./headerUnderline */ \"./src/js/headerUnderline.js\");\n/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tabs */ \"./src/js/tabs.js\");\n// * headerUnderline\n\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  // header underline function\n  setTimeout(function () {\n    Object(_headerUnderline__WEBPACK_IMPORTED_MODULE_0__[\"default\"])({\n      wrapSelector: '.nav',\n      reduceUnderline: 20\n    });\n  }, 100); // header tabs function\n\n  Object(_tabs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('.nav', '.nav__item', '.main-item', 'active');\n});\n\n//# sourceURL=webpack:///./src/js/script.js?");
-
-/***/ }),
-
-/***/ "./src/js/tabs.js":
-/*!************************!*\
-  !*** ./src/js/tabs.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es6.regexp.replace */ \"./node_modules/core-js/modules/es6.regexp.replace.js\");\n/* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar tabs = function tabs(headerSelector, tabSelector, contentSelector, activeClass) {\n  var header = document.querySelector(headerSelector),\n      tabs = document.querySelectorAll(tabSelector),\n      content = document.querySelectorAll(contentSelector);\n  var indexActiveTab = 0;\n  var aviableNow = true; // * Функиця которая скрывает таб\n\n  function hideTabContent(prevIndex, nextIndex) {\n    if (prevIndex === nextIndex) {\n      return;\n    }\n\n    setTimeout(function () {\n      if (indexActiveTab !== prevIndex) {\n        content[prevIndex].style.display = 'none';\n      }\n    }, 300);\n    content.forEach(function (item) {\n      item.style.zIndex = -1;\n      item.style.position = 'absolute';\n      item.classList.remove(activeClass);\n    });\n  } // * Функиця которая показывает конкретный таб\n\n\n  function showTabContent(i) {\n    content[i].style.display = 'block';\n    content[i].style.position = 'static';\n    content[i].style.zIndex = 3;\n    setTimeout(function () {\n      content[i].classList.add(activeClass);\n    }, 10);\n  } // * Вызов функции\n\n\n  hideTabContent();\n  showTabContent(indexActiveTab); // * Прослушка и делегирование событий\n\n  header.addEventListener('click', function (e) {\n    var target = e.target;\n\n    if (target.classList.contains(tabSelector.replace(/\\./, '')) || target.parentNode.classList.contains(tabSelector.replace(/\\./, ''))) {\n      if (aviableNow) {\n        tabs.forEach(function (item, i) {\n          if (target == item || target.parentNode == item) {\n            hideTabContent(indexActiveTab, i);\n            showTabContent(i);\n            indexActiveTab = i;\n          }\n        });\n      }\n    }\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (tabs);\n\n//# sourceURL=webpack:///./src/js/tabs.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _headerUnderline__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./headerUnderline */ \"./src/js/headerUnderline.js\");\n/* harmony import */ var _headerTabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./headerTabs */ \"./src/js/headerTabs.js\");\n// * headerUnderline\n\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  // header underline function\n  setTimeout(function () {\n    Object(_headerUnderline__WEBPACK_IMPORTED_MODULE_0__[\"default\"])({\n      wrapSelector: '.nav',\n      reduceUnderline: 20\n    });\n  }, 100); // header tabs function\n\n  Object(_headerTabs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('.nav', '.nav__item', '.main-item', 'active');\n});\n\n//# sourceURL=webpack:///./src/js/script.js?");
 
 /***/ })
 
