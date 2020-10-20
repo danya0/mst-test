@@ -1,4 +1,4 @@
-export default function underline({wrapSelector, itemsBetween, reduceUnderline}) {
+const underline = ({wrapSelector, itemsBetween, reduceUnderline}) => {
     const wrap = document.querySelector(wrapSelector),
     items = wrap.querySelectorAll('*');
 
@@ -89,3 +89,5 @@ export default function underline({wrapSelector, itemsBetween, reduceUnderline})
 
     drawUnderline(activeItem);
 }
+
+export default underline;

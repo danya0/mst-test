@@ -33,4 +33,15 @@ body {
 // Other components
 @import "components/header.scss";
 @import "components/main.scss";
+.another {
+    & .container {
+        width: 100%;
+        height: 100%;
+    }
+    &-content {
+        width: 100%;
+        height: 100%;
+        background: #f0f0f0;
+    }
+}
 @import "components/footer.scss";

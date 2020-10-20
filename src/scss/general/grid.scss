@@ -4,6 +4,8 @@
     margin: 0 auto;
     width: 100%;
     height: 100%;
+    background-color: #fafafa;
+    background-origin: padding-box;
 
     // todo: 1300px шрифт по центру тайтл и суб
     @include ad700() {
