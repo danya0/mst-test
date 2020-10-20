@@ -1,4 +1,19 @@
 .main {
+    &-wrapper {
+        position: relative;
+        flex: 1 1;
+    }
+    &-item {
+        top: 0; right: 0; left: 0;
+        transition: opacity .3s ease;
+        opacity: 0;
+        display: none;
+        height: 100%;
+        flex: 1 1;
+        &.active {
+            opacity: 1;
+        }
+    }
     &-wrap {
         display: flex;
         height: 100%;
