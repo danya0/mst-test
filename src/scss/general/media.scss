@@ -1,3 +1,8 @@
+@mixin ad1300 {
+    @media (max-width: 1300px) {
+        @content;
+    }
+}
 @mixin ad1100 {
     @media (max-width: 1100px) {
         @content;
@@ -5,6 +10,11 @@
 }
 @mixin ad700 {
     @media (max-width: 700px) {
+        @content;
+    }
+}
+@mixin ad400 {
+    @media (max-width: 400px) {
         @content;
     }
 }

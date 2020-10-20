@@ -13,7 +13,7 @@ mixin main()
         .container
             .main-wrap
                 .tabs
-                    .tabs-wrap
+                    .tabs-block
                         each val, index in content
                             input(type="radio", name="tabs", id="tab"+(index+1) checked=index == 0 ? true : false).tabs__input
                             label(for="tab"+(index+1)).tabs__item= content[index].title
@@ -21,11 +21,13 @@ mixin main()
                 .content
                     .content-left
                         .content-wrap
-                            each val, index in content
-                                .content-block
-                                    .content__title= content[index].title
-                                    .content__subtitle= content[index].subtitle
-                        .content__counter <span>1</span>/6
+                            .content-block-wrap
+                                each val, index in content
+                                    .content-block
+                                        .content__title= content[index].title
+                                        .content__subtitle= content[index].subtitle
+                            .content__counter <span>1 </span>/ 6
                     .content-right
                         - for(let i = 0; i<6; i++)
-                            .content__img
+                            .content-image-block
+                                .content__img

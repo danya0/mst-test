@@ -8,7 +8,6 @@
         font-family: 'Gilroy', sans-serif;
         font-weight: bold;
         @include ad700 {
-            height: 160px;
             flex-direction: column;
             padding: 22px 50px;
         }
@@ -23,7 +22,16 @@
             flex-direction: column;
         }
         @include ad700 {
+            margin-top: 30px;
+            width: 80%;
+            display: grid;
+            grid-template: 1fr 1fr / 1fr 1fr;
+            text-align: center;
             order: 1;
+        }
+        @include ad400() {
+            display: flex;
+            flex-direction: column;
         }
         &__item {
             font-size: 12px;
@@ -37,6 +45,7 @@
         }   
     }
     &-box {
+        z-index: 1;
         position: absolute;
         height: 70px;
         width: 70px;

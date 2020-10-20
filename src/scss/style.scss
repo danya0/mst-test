@@ -2,12 +2,13 @@
 @import "general/mixins";
 @import "general/reset";
 @import "general/fonts";
-@import "general/grid";
 @import "general/media";
+@import "general/grid";
 
 $base: #262525;
 $tabActive: #262525;
 $tabDisabe: #505050;
+$bgAlternative: #F0F0F0;
 
 html, body {
     height: 100%;
