@@ -11,5 +11,5 @@ document.addEventListener('DOMContentLoaded', ()=> {
         });
     }, 100);
     // header tabs function
-    // tabs('.nav', '.nav__item', '.main-item', 'active')
+    tabs('.nav', '.nav__item', '.main-item', 'active')
 })

@@ -3,12 +3,16 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
         tabs = document.querySelectorAll(tabSelector),
         content = document.querySelectorAll(contentSelector);
 
-    let tabActive = 0;
+    let indexActiveTab = 0;
+
     // * Функиця которая скрывает таб
-    function hideTabContent(prevIndex) {
+    function hideTabContent(prevIndex, nextIndex) {
+        if (prevIndex === nextIndex) {
+            return;
+        }
         content.forEach(item => {
+            item.style.zIndex = 0;
             item.classList.remove(activeClass);
-            // ? Удаляем элемент после анимации
         })
         setTimeout(() => {
             content[prevIndex].style.display = 'none';
@@ -17,28 +21,34 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
     
     // * Функиця которая показывает конкретный таб
     function showTabContent(i) {
+        content[i].style.position = 'static';
         content[i].style.display = 'block';
-        content[i].classList.add(activeClass);
+        content[i].style.zIndex = 3;
+        setTimeout(() => {
+            content[i].classList.add(activeClass);
+        }, 10);
     }
 
     // * Вызов функции
     hideTabContent();
-    showTabContent(tabActive);
+    showTabContent(indexActiveTab);
 
+    // * Прослушка и делегирование событий
     header.addEventListener('click', (e)=> {
         const target = e.target;
         if(target.classList.contains(tabSelector.replace(/\./, '')) || 
         target.parentNode.classList.contains(tabSelector.replace(/\./, ''))) {
             tabs.forEach((item, i)=> {
                 if(target == item || target.parentNode == item) {
-                    hideTabContent(tabActive)
+                    hideTabContent(indexActiveTab, i)
                     showTabContent(i);
-                    tabActive = i;
+                    indexActiveTab = i;
                 }
             });
         }
 
     });
+
 }
 
 export default tabs;

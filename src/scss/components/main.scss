@@ -5,11 +5,11 @@
     }
     &-item {
         position: absolute;
-        top: 0; bottom: 0; right: 0; left: 0;
+        top: 0; right: 0; left: 0;
         transition: opacity .3s ease;
         opacity: 0;
-        height: 100%;
         display: none;
+        height: 100%;
         flex: 1 1;
         &.active {
             opacity: 1;
