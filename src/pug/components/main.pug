@@ -1,7 +1,7 @@
 mixin main()
     - 
         var content = [
-            {title: "Архитектура", subtitle: "Оригинальная архитектура жилого комплекса бизнес-класса «Первомайская» формирует современный стиль жизни"},
+            {title: "Архитектура", subtitle: "Оригинальная архитектура жилого комплекса бизнес-класса «Первомайская» формирует современный стиль жизни Оригинальная архитектура жилого комплекса бизнес-класса «Первомайская» формирует современный стиль жизни Оригинальная архитектура жилого комплекса бизнес-класса «Первомайская» формирует современный стиль жизни"},
             {title: "Благоустройство", subtitle: "Запроектированные большие окна, которые пропускают много солнечного света, наполнят Ваши квартиры теплотой и уютом"},
             {title: "Безопастность", subtitle: "Современный двор европейского уровня — территория для детей, игр на свежем воздухе и вечерних"},
             {title: "Инженерия", subtitle: "Оригинальная архитектура жилого комплекса бизнес-класса «Первомайская» формирует современный стиль жизни"},
@@ -25,7 +25,13 @@ mixin main()
                                 each val, index in content
                                     .content-block
                                         .content__title= content[index].title
-                                        .content__subtitle= content[index].subtitle
+                                        .content__subtitle
+                                            span= content[index].subtitle
+                                            a(href="#").content-overflow-link
+                                                .content-overflow-link-wrap
+                                                    .content-overflow-link__dot
+                                                    .content-overflow-link__dot
+                                                    .content-overflow-link__dot
                             .content__counter <span>1 </span>/ 6
                     .content-right
                         - for(let i = 0; i<6; i++)

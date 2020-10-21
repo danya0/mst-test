@@ -96,6 +96,10 @@ const underline = ({wrapSelector, itemsBetween, reduceUnderline, maxWidth}) => {
         });
     }
     drawUnderline(activeItem);
+
+    setTimeout(() => {
+        drawUnderline(activeItem)
+    }, 200);
 }
 
 export default underline;

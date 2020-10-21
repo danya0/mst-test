@@ -442,6 +442,36 @@ body {
   background-repeat: no-repeat;
 }
 
+.main .content-overflow-link {
+  display: none;
+  position: absolute;
+  -webkit-transform: translateX(7px);
+      -ms-transform: translateX(7px);
+          transform: translateX(7px);
+  height: 28px;
+  width: 28px;
+  background: #262525;
+}
+
+.main .content-overflow-link-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .content-overflow-link__dot {
+  height: 2px;
+  width: 2px;
+  background: #fff;
+  margin: 0px 1px;
+}
+
 .another {
   z-index: 1;
 }

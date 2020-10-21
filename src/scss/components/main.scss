@@ -187,12 +187,7 @@
             height: 100%;
             width: 100%;
             overflow-x: hidden;
-            &:nth-child(1) {
-                & .content__img {
-                    background-image: url("../../img/main/img_1.jpg");
-                }
-            }
-            @for $var from 2 to 7 {
+            @for $var from 1 to 7 {
                 &:nth-child(#{$var})) {
                     & .content__img {
                         background-image: url("../../img/main/img_#{$var}.jpg");
@@ -210,6 +205,27 @@
             background-size: cover;
             background-repeat: no-repeat;
             // todo: отображение картинки чтобы она на сжималась
+        }
+        &-overflow-link {
+            display: none;
+            position: absolute;
+            transform: translateX(7px);
+            height: 28px;
+            width: 28px;
+            background: $base;
+            &-wrap {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+            }
+            &__dot {
+                height: 2px;
+                width: 2px;
+                background: #fff;
+                margin: 0px 1px;
+            }
         }
         @media (max-height: 500px) {
             &__counter {
