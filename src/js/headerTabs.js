@@ -35,7 +35,6 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
 
     // * Вызов функции
     hideTabContent();
-    showTabContent(indexActiveTab);
 
     // * Прослушка и делегирование событий
     header.addEventListener('click', (e)=> {
