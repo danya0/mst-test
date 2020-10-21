@@ -1,4 +1,4 @@
-const underline = ({wrapSelector, itemsBetween, reduceUnderline}) => {
+const underline = ({wrapSelector, itemsBetween, reduceUnderline, maxWidth}) => {
     const wrap = document.querySelector(wrapSelector),
     items = wrap.querySelectorAll('*');
 
@@ -87,6 +87,14 @@ const underline = ({wrapSelector, itemsBetween, reduceUnderline}) => {
         })
     })
 
+    // * resize function
+    if(maxWidth) {
+        window.addEventListener('resize', ()=> {
+            if(window.innerWidth >= maxWidth) {
+                drawUnderline(activeItem)
+            }
+        });
+    }
     drawUnderline(activeItem);
 }
 

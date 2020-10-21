@@ -10,6 +10,14 @@ const mainTabs = () => {
     let indexActiveTab = 0;
     let aviableNow = true;
 
+    function determDirectionTextContent(item, direction) {
+        item.classList.add(direction);
+            item.style.display = 'flex';
+            setTimeout(() => {
+                item.classList.remove(direction);
+            }, 10);
+    }
+
     // * Функция которая меняет объект
     function switchItem(current, prev) {
         if (current === prev) {
@@ -32,27 +40,16 @@ const mainTabs = () => {
         // ? Проверка в какую сторону происходит переход
         if(current > prev) {
             // ? Работа с текстовыми блоками
-            textContent[current].classList.add('fromBottom');
-            textContent[current].style.display = 'flex';
-            setTimeout(() => {
-                textContent[current].classList.remove('fromBottom');
-            }, 10);
-
+            determDirectionTextContent(textContent[current], 'fromBottom');
+            
             // ? Работа с image блоками
             imageContent[current].classList.remove('hidden');
             for(let i = current; i > 0; i--) {
-                console.log(imageContent);
-                console.log(i);
-                console.log(imageContent[i]);
                 imageContent[i].classList.remove('hidden');
             }
         } else {
             // ? Работа с текстовыми блоками
-            textContent[current].classList.add('fromTop');
-            textContent[current].style.display = 'flex';
-            setTimeout(() => {
-                textContent[current].classList.remove('fromTop');
-            }, 10);
+            determDirectionTextContent(textContent[current], 'fromTop');
             
             // ? Работа с image блоками
             imageContent[current].classList.remove('hidden');
