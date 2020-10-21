@@ -29,5 +29,9 @@ mixin main()
                             .content__counter <span>1 </span>/ 6
                     .content-right
                         - for(let i = 0; i<6; i++)
-                            .content-image-block
-                                .content__img
+                            -if(i == 0)
+                                .content-image-block
+                                    .content__img
+                            -else
+                                .content-image-block.hidden
+                                    .content__img

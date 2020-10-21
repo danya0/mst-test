@@ -18,3 +18,8 @@
         @content;
     }
 }
+@mixin ad320 {
+    @media (max-width: 320px) {
+        @content;
+    }
+}

@@ -42,17 +42,14 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
         const target = e.target;
         if(target.classList.contains(tabSelector.replace(/\./, '')) || 
         target.parentNode.classList.contains(tabSelector.replace(/\./, ''))) {
-            if (aviableNow) {
-                tabs.forEach((item, i)=> {
-                    if(target == item || target.parentNode == item) {
-                        hideTabContent(indexActiveTab, i)
-                        showTabContent(i);
-                        indexActiveTab = i;
-                    }
-                });
-            }
+            tabs.forEach((item, i)=> {
+                if(target == item || target.parentNode == item) {
+                    hideTabContent(indexActiveTab, i)
+                    showTabContent(i);
+                    indexActiveTab = i;
+                }
+            });
         }
-
     });
 
 }

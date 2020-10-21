@@ -113,6 +113,7 @@
             min-height: 350px;
         }
         &-right {
+            position: relative;
             overflow: hidden;
         }
         &-left {
@@ -124,13 +125,29 @@
         }
         &-wrap {
             position: relative;
-            max-width: 435px;
+            width: 435px;
         }
         &-block {
+            left: 0px;top: 0px;bottom: 0;right: 0;
+            min-height: 183px;
             width: 100%;
+            max-width: 435px;
             display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            transition-property: transform opacity;
+            transition-duration: .3s;
+            &.fromTop {
+                transform: translateY(-70px);
+            }
+            &.fromBottom {
+                transform: translateY(70px);
+            }
+            &.hide {
+                opacity: 0;
+            }
             &:nth-child(1) {
-                display: block;
+                display: flex;
             }
         }
         &__counter {
@@ -151,7 +168,6 @@
             line-height: 53px;
             letter-spacing: -0.0255199px;
             text-transform: uppercase;
-            margin-bottom: 40px;
         }
         &__subtitle {
             color: $base;
@@ -163,41 +179,25 @@
             letter-spacing: -0.0220791px;
         }
         &-image-block {
-            position: relative;
+            transition: height .3s;
+            position: absolute;
             height: 100%;
             width: 100%;
-            display: none;
             overflow-x: hidden;
             &:nth-child(1) {
-                display: block;
                 & .content__img {
                     background-image: url("../../img/main/img_1.jpg");
                 }
             }
-            &:nth-child(2) {
-                & .content__img {
-                    background-image: url("../../img/main/img_2.jpg");
+            @for $var from 2 to 7 {
+                &:nth-child(#{$var})) {
+                    & .content__img {
+                        background-image: url("../../img/main/img_#{$var}.jpg");
+                    }
                 }
             }
-            &:nth-child(3) {
-                & .content__img {
-                    background-image: url("../../img/main/img_3.jpg");
-                }
-            }
-            &:nth-child(4) {
-                & .content__img {
-                    background-image: url("../../img/main/img_4.jpg");
-                }
-            }
-            &:nth-child(5) {
-                & .content__img {
-                    background-image: url("../../img/main/img_5.jpg");
-                }
-            }
-            &:nth-child(6) {
-                & .content__img {
-                    background-image: url("../../img/main/img_6.jpg");
-                }
+            &.hidden {
+                height: 0%;
             }
         }
         &__img {
@@ -220,6 +220,9 @@
             &__counter {
                 left: 50px;
             }
+            &-block {
+                left: 20px;
+            }
             text-align: center;
         }
         @include ad1100() {
@@ -230,14 +233,34 @@
             &__counter {
                 bottom: -50px;
             }
+            &-wrap {
+                width: auto;
+            }
         }
         @include ad700() {
+            &-wrap {
+                padding: 0px 10px;
+            }
             &__counter {
                 display: none;
             }
             &-left {
                 padding: 0px 15px;
+                font-size: 8px;
             }
-        } 
+            &-block {
+                left: 10px;
+            }
+            &-left, &-right {
+                min-height: 270px;
+            }
+        }
+        @include ad320() {
+            &__title {
+                line-height: 30px;
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+        }
     }
 }
