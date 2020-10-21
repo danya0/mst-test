@@ -188,7 +188,7 @@
             width: 100%;
             overflow-x: hidden;
             @for $var from 1 to 7 {
-                &:nth-child(#{$var})) {
+                &:nth-child(#{$var}) {
                     & .content__img {
                         background-image: url("../../img/main/img_#{$var}.jpg");
                     }
