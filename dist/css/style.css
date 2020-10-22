@@ -545,16 +545,6 @@ body {
     bottom: -50px;
   }
 
-  .content-wrap {
-    width: auto;
-  }
-
-  .content-left {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-  }
-
   .content-block {
     min-height: 160px;
   }
