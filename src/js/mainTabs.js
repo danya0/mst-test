@@ -2,7 +2,6 @@ const mainTabs = () => {
     const header = document.querySelector('.tabs-block'),
         tabSelector = '.tabs__item',
         tabs = document.querySelectorAll(tabSelector),
-        inputs = document.querySelectorAll('.tabs__input'),
         textContent = document.querySelectorAll('.content-block'),
         imageContent = document.querySelectorAll('.content-image-block'),
         counter = document.querySelector('.content__counter span');
@@ -79,14 +78,6 @@ const mainTabs = () => {
                     indexActiveTab = i;
                 }
             });
-            inputs.forEach(item => {
-                setTimeout(() => {
-                    item.setAttribute('disabled', 'true');
-                }, 5);
-                setTimeout(() => {
-                    item.removeAttribute('disabled');
-                }, 310);
-            })
 
             setTimeout(() => {
                 aviableNow = true;

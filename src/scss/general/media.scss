@@ -8,6 +8,11 @@
         @content;
     }
 }
+@mixin ad830 {
+    @media (max-width: 830px) {
+        @content;
+    }
+}
 @mixin ad700 {
     @media (max-width: 700px) {
         @content;

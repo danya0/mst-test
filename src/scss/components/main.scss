@@ -252,6 +252,11 @@
             width: auto;
         }
     }
+    @include ad830() {
+        &__title {
+            font-size: 3.4em;
+        }
+    }
     @include ad700() {
         &-wrap {
             padding: 0px 10px;
