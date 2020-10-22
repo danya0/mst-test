@@ -10,6 +10,14 @@ const mainTabs = () => {
     let indexActiveTab = 0;
     let aviableNow = true;
 
+    function doTabItemActive(i) {
+        tabs.forEach(item => {
+            item.classList.remove('active');
+        });
+        console.log(tabs[i]);
+        tabs[i].classList.add('active');
+    }
+
     function determDirectionTextContent(item, direction) {
         item.classList.add(direction);
             item.style.display = 'flex';
@@ -67,6 +75,7 @@ const mainTabs = () => {
             tabs.forEach((item, i)=> {
                 if(target == item) {
                     switchItem(i, indexActiveTab)
+                    doTabItemActive(i);
                     indexActiveTab = i;
                 }
             });

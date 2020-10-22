@@ -15,8 +15,10 @@ mixin main()
                 .tabs
                     .tabs-block
                         each val, index in content
-                            input(type="radio", name="tabs", id="tab"+(index+1) checked=index == 0 ? true : false).tabs__input
-                            label(for="tab"+(index+1)).tabs__item= content[index].title
+                            -if(index == 0)
+                                .tabs__item.active= content[index].title
+                            -else
+                                .tabs__item= content[index].title
 
                 .content
                     .content-left
