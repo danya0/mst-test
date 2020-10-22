@@ -1,37 +1,44 @@
 const cropFunction = (cropSelector, maxHeight, tabsSelector, tabsItemsSelector) => {
-    const cropItem = document.querySelectorAll(cropSelector),
+    const cropItems = document.querySelectorAll(cropSelector),
         tabs = document.querySelector(tabsSelector),
         tabsItems = document.querySelectorAll(tabsItemsSelector);
 
-    function cropCurrentItem(i) {
-        const span = cropItem[i].firstChild;
-        const linkBlock = cropItem[i].lastChild;
-        console.log(cropItem[i].clientHeight);
-        if(cropItem[i].clientHeight > maxHeight) {
-            let text = '';
-            if (window.innerWidth > 320) {
-                text = cropItem[i].textContent.substring(0, 35 * 3);
-            } else {
-                // ? Поддержка экранов 320px
-                text = cropItem[i].textContent.substring(0, 25 * 3);
-            }
-            span.textContent = text;
-            linkBlock.style.display = 'inline-block';
-        }
-    }
+
+    let currentItem = 0;
 
     tabs.addEventListener('click', (e)=> {
         const target = e.target;
         if(target.classList.contains(tabsItemsSelector.replace(/\./, ''))) {
             tabsItems.forEach((item, i)=> {
                 if(target == item) {
-                    cropCurrentItem(i);
+                    cropThisItem(i);
+                    currentItem = i;
                 }
             });
         }
     });
 
-    cropCurrentItem(0);
+    // * Рекурсивная функция которая уменьшает текст до трёх строк
+    function cropThisItem(ind, n = 45) {
+        const span = cropItems[ind].firstChild;
+        const linkBlock = cropItems[ind].lastChild;
+
+        if(cropItems[ind].clientHeight > maxHeight) {
+            let text = '';
+            text = cropItems[ind].textContent.substring(0, n * 3);
+            span.textContent = text;
+            cropThisItem(ind, n - 7);
+            linkBlock.style.display = 'inline-block';
+        } else {
+            return;
+        }
+    }
+    cropThisItem(0)
+
+    window.addEventListener('resize', ()=> {
+        cropThisItem(currentItem);
+    });
+
 }
 
 export default cropFunction;
