@@ -12,6 +12,10 @@ $bgAlternative: #F0F0F0;
 
 * {
     box-sizing: border-box;
+    &::selection {
+        color: #000;
+        background: #ebd8cc;
+    }
 }
 
 html, body {

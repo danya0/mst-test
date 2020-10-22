@@ -51,6 +51,16 @@ a {
           box-sizing: border-box;
 }
 
+*::-moz-selection {
+  color: #000;
+  background: #ebd8cc;
+}
+
+*::selection {
+  color: #000;
+  background: #ebd8cc;
+}
+
 html,
 body {
   height: 100%;
