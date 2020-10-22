@@ -46,6 +46,11 @@ a {
   background-origin: padding-box;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
@@ -281,12 +286,10 @@ body {
 .content-right {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
-  min-height: 350px;
 }
 
 .content-right {
   position: relative;
-  overflow: hidden;
 }
 
 .content-left {
@@ -299,10 +302,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   font-size: 10px;
 }
 
@@ -318,7 +317,6 @@ body {
   right: 0;
   min-height: 183px;
   width: 100%;
-  max-width: 435px;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -327,11 +325,11 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-transition-property: -webkit-transform opacity;
-  transition-property: -webkit-transform opacity;
-  -o-transition-property: transform opacity;
-  transition-property: transform opacity;
-  transition-property: transform opacity, -webkit-transform opacity;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  -o-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   -webkit-transition-duration: .3s;
        -o-transition-duration: .3s;
           transition-duration: .3s;
@@ -363,11 +361,9 @@ body {
   position: absolute;
   left: 0px;
   bottom: -60%;
-  font-family: Gilroy;
-  font-style: normal;
+  font-family: "Gilroy", sans-serif;
   font-weight: 300;
   font-size: 1.7em;
-  line-height: 20px;
 }
 
 .content__title {
@@ -383,8 +379,6 @@ body {
 .content__subtitle {
   color: #262525;
   font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
   font-size: 1.8em;
   line-height: 30px;
   letter-spacing: -0.0220791px;
@@ -397,7 +391,6 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
 }
 
 .content-image-block:nth-child(1) .content__img {
@@ -431,9 +424,7 @@ body {
 .content__img {
   height: 100%;
   width: 100%;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: center center / cover no-repeat;
 }
 
 .content-overflow-link {
@@ -507,29 +498,27 @@ body {
 }
 
 @media (max-width: 1300px) {
-  .content {
-    text-align: center;
-  }
-
-  .content-wrap {
+  .content-block {
     padding: 0px 20px;
   }
 
   .content__counter {
-    left: 50px;
+    left: 20px;
   }
 
-  .content-block {
-    left: 20px;
+  .content__title {
+    font-size: 3.8em;
   }
 }
 
 @media (max-width: 1100px) {
+  .container {
+    padding: 0px 25px;
+  }
+
   .header .nav {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
   }
 
   .header .nav__item {
@@ -548,8 +537,8 @@ body {
             flex-direction: column;
   }
 
-  .content-left {
-    font-size: 9px;
+  .content__title {
+    line-height: normal;
   }
 
   .content__counter {
@@ -559,15 +548,19 @@ body {
   .content-wrap {
     width: auto;
   }
-}
 
-@media (max-width: 830px) {
-  .content__title {
-    font-size: 3.4em;
+  .content-left {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+
+  .content-block {
+    min-height: 160px;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .container {
     padding: 0;
   }
@@ -637,21 +630,8 @@ body {
     text-align: center;
   }
 
-  .content-wrap {
-    padding: 0px 10px;
-  }
-
   .content__counter {
     display: none;
-  }
-
-  .content-left {
-    padding: 0px 15px;
-    font-size: 8px;
-  }
-
-  .content-block {
-    left: 10px;
   }
 
   .content-left,
@@ -683,6 +663,10 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .content-left {
+    font-size: 8px;
   }
 }
 
@@ -724,15 +708,7 @@ body {
 
 }
 
- @media (max-width: 830px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (max-width: 700px){
+ @media (max-width: 750px){
 
 @supports (-webkit-appearance:none){
 

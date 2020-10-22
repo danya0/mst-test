@@ -84,6 +84,12 @@ const mainTabs = () => {
             }, 300);
         }
     });
+
+    window.addEventListener('resize', ()=> {
+        textContent.forEach(item => {
+            item.style.maxWidth = '';
+        });
+    });
 }
 
 export default mainTabs;

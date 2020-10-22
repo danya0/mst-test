@@ -4,17 +4,15 @@
     background-color: $bgAlternative;
     &-left, &-right {
         flex-basis: 50%;
-        min-height: 350px;
+        // min-height: 350px;
     }
     &-right {
         position: relative;
-        overflow: hidden;
     }
     &-left {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
         font-size: 10px;
     }
     &-wrap {
@@ -25,11 +23,11 @@
         left: 0px;top: 0px;bottom: 0;right: 0;
         min-height: 183px;
         width: 100%;
-        max-width: 435px;
+        // max-width: 435px;
         display: none;
         flex-direction: column;
         justify-content: space-between;
-        transition-property: transform opacity;
+        transition-property: transform, opacity;
         transition-duration: .3s;
         &.fromTop {
             transform: translateY(-70px);
@@ -48,11 +46,9 @@
         position: absolute;
         left: 0px;
         bottom: -60%;
-        font-family: Gilroy;
-        font-style: normal;
+        font-family: "Gilroy", sans-serif;
         font-weight: 300;
         font-size: 1.7em;
-        line-height: 20px;
     }
     &__title {
         color: $base;
@@ -66,8 +62,6 @@
     &__subtitle {
         color: $base;
         font-family: "Roboto", sans-serif;
-        font-style: normal;
-        font-weight: normal;
         font-size: 1.8em;
         line-height: 30px;
         letter-spacing: -0.0220791px;
@@ -77,8 +71,7 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        overflow-x: hidden;
-        @for $var from 1 to 7 {
+        @for $var from 1 through 6 {
             &:nth-child(#{$var}) {
                 & .content__img {
                     background-image: url("../../img/main/img_#{$var}.jpg");
@@ -92,10 +85,7 @@
     &__img {
         height: 100%;
         width: 100%;
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        // todo: отображение картинки чтобы она на сжималась
+        background: center center / cover no-repeat;
     }
     &-overflow-link {
         display: none;
@@ -124,21 +114,20 @@
         }
     }
     @include ad1300() {
-        &-wrap {
+        &-block {
             padding: 0px 20px;
         }
         &__counter {
-            left: 50px;
-        }
-        &-block {
             left: 20px;
         }
-        text-align: center;
+        &__title {
+            font-size: 3.8em;
+        }
     }
     @include ad1100() {
         flex-direction: column;
-        &-left {
-            font-size: 9px;
+        &__title {
+            line-height: normal;
         }
         &__counter {
             bottom: -50px;
@@ -146,28 +135,24 @@
         &-wrap {
             width: auto;
         }
-    }
-    @include ad830() {
-        &__title {
-            font-size: 3.4em;
+        &-left {
+            justify-content: start;
+        }
+        &-block {
+            min-height: 160px;
         }
     }
     @include ad700() {
-        &-wrap {
-            padding: 0px 10px;
-        }
         &__counter {
             display: none;
         }
-        &-left {
-            padding: 0px 15px;
-            font-size: 8px;
-        }
-        &-block {
-            left: 10px;
-        }
         &-left, &-right {
             min-height: 270px;
+        }
+    }
+    @include ad400() {
+        &-left {
+            font-size: 8px;
         }
     }
     @include ad320() {

@@ -19,7 +19,8 @@
         justify-content: space-between;
         
         @include ad1100 {
-            flex-direction: column;
+            display: grid;
+            grid-template: 1fr 1fr / 1fr 1fr;
         }
         @include ad700 {
             margin-top: 30px;

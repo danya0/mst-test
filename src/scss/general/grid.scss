@@ -7,7 +7,9 @@
     background-color: #fafafa;
     background-origin: padding-box;
 
-    // todo: 1300px шрифт по центру тайтл и суб
+    @include ad1100() {
+        padding: 0px 25px;
+    }
     @include ad700() {
         padding: 0;
     }
