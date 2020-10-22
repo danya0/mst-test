@@ -74,7 +74,7 @@
         @for $var from 1 through 6 {
             &:nth-child(#{$var}) {
                 & .content__img {
-                    background-image: url("../../img/main/img_#{$var}.jpg");
+                    background-image: url("../img/main/img_#{$var}.jpg");
                 }
             }
         }

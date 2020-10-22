@@ -394,27 +394,27 @@ body {
 }
 
 .content-image-block:nth-child(1) .content__img {
-  background-image: url("../../img/main/img_1.jpg");
+  background-image: url("../img/main/img_1.jpg");
 }
 
 .content-image-block:nth-child(2) .content__img {
-  background-image: url("../../img/main/img_2.jpg");
+  background-image: url("../img/main/img_2.jpg");
 }
 
 .content-image-block:nth-child(3) .content__img {
-  background-image: url("../../img/main/img_3.jpg");
+  background-image: url("../img/main/img_3.jpg");
 }
 
 .content-image-block:nth-child(4) .content__img {
-  background-image: url("../../img/main/img_4.jpg");
+  background-image: url("../img/main/img_4.jpg");
 }
 
 .content-image-block:nth-child(5) .content__img {
-  background-image: url("../../img/main/img_5.jpg");
+  background-image: url("../img/main/img_5.jpg");
 }
 
 .content-image-block:nth-child(6) .content__img {
-  background-image: url("../../img/main/img_6.jpg");
+  background-image: url("../img/main/img_6.jpg");
 }
 
 .content-image-block.hidden {
@@ -674,12 +674,12 @@ body {
   }
 }
 @supports (-webkit-appearance:none){
-.content-image-block:nth-child(1) .content__img{background-image:url("../../img/main/img_1.webp")}
-.content-image-block:nth-child(2) .content__img{background-image:url("../../img/main/img_2.webp")}
-.content-image-block:nth-child(3) .content__img{background-image:url("../../img/main/img_3.webp")}
-.content-image-block:nth-child(4) .content__img{background-image:url("../../img/main/img_4.webp")}
-.content-image-block:nth-child(5) .content__img{background-image:url("../../img/main/img_5.webp")}
-.content-image-block:nth-child(6) .content__img{background-image:url("../../img/main/img_6.webp")}
+.content-image-block:nth-child(1) .content__img{background-image:url("../img/main/img_1.webp")}
+.content-image-block:nth-child(2) .content__img{background-image:url("../img/main/img_2.webp")}
+.content-image-block:nth-child(3) .content__img{background-image:url("../img/main/img_3.webp")}
+.content-image-block:nth-child(4) .content__img{background-image:url("../img/main/img_4.webp")}
+.content-image-block:nth-child(5) .content__img{background-image:url("../img/main/img_5.webp")}
+.content-image-block:nth-child(6) .content__img{background-image:url("../img/main/img_6.webp")}
 }
 
  @media (max-width: 1300px){
