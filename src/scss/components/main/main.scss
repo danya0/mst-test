@@ -1,0 +1,27 @@
+.main {
+    &-wrapper {
+        position: relative;
+        flex: 1 1;
+    }
+    &-item {
+        top: 0; right: 0; left: 0;
+        transition: opacity .3s ease;
+        opacity: 0;
+        height: 100%;
+        flex: 1 1;
+        display: none;
+        &:nth-child(1) {
+            display: block;
+        }
+        &.active {
+            opacity: 1;
+        }
+    }
+    &-wrap {
+        display: flex;
+        height: 100%;
+        @include ad700() {
+            flex-direction: column;
+        }
+    }
+}

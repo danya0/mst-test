@@ -32,7 +32,7 @@ body {
 
 // Other components
 @import "components/header.scss";
-@import "components/main.scss";
+@import "components/main/1style.scss";
 .another {
     z-index: 1;
     & .container {
