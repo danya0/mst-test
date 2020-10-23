@@ -1,5 +1,6 @@
 # mst-test
-
+## GitHub Pages
+https://danya0.github.io/mst-test/
 ## Что использовал в работе?
 ### Система сборки проекта
 В работе использовал собственную `gulp + webpack + babel` сборку. 
